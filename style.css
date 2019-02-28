@@ -1,0 +1,64 @@
+html {
+      background: #018DED url(fondo.jpeg);
+      background-size: cover;
+      font-family: 'helvetica neue';
+      text-align: center;
+      font-size: 10px;
+    }
+
+body {
+  margin: 0;
+  font-size: 2rem;
+  min-height: 100vh;
+  align-items: center;
+}
+
+p {
+  font-family: Arial, Helvetica, sans-serif;;
+  font-size: 20px;
+  text-align: center;
+}
+
+.reloj {
+  width: 30rem;
+  height: 30rem;
+  border: 20px solid white;
+  border-radius: 50%;
+  margin: 50px auto;
+  position: relative;
+  padding: 2rem;
+  box-shadow:
+    0 0 0 4px rgba(0,0,0,0.1),
+    inset 0 0 0 3px #EFEFEF,
+    inset 0 0 10px black,
+    0 0 10px rgba(0,0,0,0.2);
+}
+
+.reloj-frente {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-3px); /* altura de las agujas del reloj */
+}
+
+.agujas {
+  width: 50%;
+  height: 6px;
+  background: black;
+  position: absolute;
+  top: 50%;
+  /* propiedades para darle estilo al movimiento de las agujas */
+  /* transform origin alinea el segundero con las otras agujas dentro del eje X */
+  transform-origin: 100%;
+  /* transform rota las agujas a 90 grados para que empiecen alineadas en el eje Y */
+  transform: rotate(90deg);
+  /* transition le da movimiento a las agujas con una velocidad determinada */
+  transition: all 0.05s;
+  /* transition-timing-function le da un efecto al movimiento de las agujas a través de la función cubic-bezier */
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+.seg-agujas {
+  background: linear-gradient(to left, rgba(117,134,153,1) 0%,rgba(117,134,153,1) 70%,rgba(117,134,153,1) 70%,rgba(117,134,153,0) 53%,rgba(117,134,153,0) 100%);
+  z-index: 99;
+}
